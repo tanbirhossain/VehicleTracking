@@ -8,7 +8,6 @@ using VehicleTracking.Utils.Routes;
 
 namespace VehicleTracking.Api.Controllers.V1
 {
-
     public class AccountController : BaseV1Controller
     {
         private readonly IMediator _mediator;

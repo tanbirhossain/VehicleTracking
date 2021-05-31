@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using VehicleTracking.Infrastructure.Domain;
@@ -10,7 +9,7 @@ using VehicleTracking.Infrastructure.Repositories.Interfaces;
 
 namespace VehicleTracking.Infrastructure.Repositories
 {
-   public class ClientRepository : IClientRepository
+    public class ClientRepository : IClientRepository
     {
         private readonly VehicleTrackingDbContext _db;
 

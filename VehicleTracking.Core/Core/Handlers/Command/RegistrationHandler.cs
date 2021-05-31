@@ -22,10 +22,10 @@ namespace VehicleTracking.Application.Core.Handlers.Command
         {
             _clientRepository = clientRepository;
         }
-        public async Task<RegistrationResponse> Handle(RegistrationCommand request, CancellationToken cancellationToken)
+        public async Task<RegistrationResponse> Handle(RegistrationCommand command, CancellationToken cancellationToken)
         {
-            var client = request.Adapt<Client>();
-            client.Password = Authenticator.GetHashPassword(request.Password);
+            var client = command.Adapt<Client>();
+            client.Password = Authenticator.GetHashPassword(command.Password);
             var result = await _clientRepository.InsertClient(client);
             return result.Adapt<RegistrationResponse>();
         }
