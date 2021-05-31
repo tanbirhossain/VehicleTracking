@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace VehicleTracking.Dll.Domain.Entities
+namespace VehicleTracking.Infrastructure.Domain.Entities
 {
-    public class Customer
+    public class Client
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName  { get; set; }
-        public string UserName  { get; set; }
+        public string Email  { get; set; }
+        public string Password  { get; set; }
 
     }
 }

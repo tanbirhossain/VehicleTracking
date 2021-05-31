@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="10.2.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.2.1" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.6" NoWarn="NU1605" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.6" NoWarn="NU1605" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.6" />
@@ -19,7 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\VehicleTracking.Dll\VehicleTracking.Dll.csproj" />
+    <ProjectReference Include="..\VehicleTracking.Core\VehicleTracking.Application.csproj" />
+    <ProjectReference Include="..\VehicleTracking.Dll\VehicleTracking.Infrastructure.csproj" />
+    <ProjectReference Include="..\VehicleTracking.Utility\VehicleTracking.Utils.csproj" />
   </ItemGroup>
 
 </Project>

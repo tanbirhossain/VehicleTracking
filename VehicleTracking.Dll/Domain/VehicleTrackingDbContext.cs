@@ -2,22 +2,24 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using VehicleTracking.Dll.Domain.Entities;
+using VehicleTracking.Infrastructure.Domain.Entities;
 
-namespace VehicleTracking.Dll.Domain
+namespace VehicleTracking.Infrastructure.Domain
 {
-   public class VehicleTrackingDbContext : DbContext
+    public class VehicleTrackingDbContext : DbContext
     {
-        public VehicleTrackingDbContext (DbContextOptions options) : base(options)
+        public VehicleTrackingDbContext(DbContextOptions options) : base(options)
         {
         }
-
-        DbSet<Customer> Customers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Customer>().ToTable("Customer");
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(VehicleTrackingDbContext).Assembly);
+           
+            modelBuilder.Entity<Client>().ToTable("Client");
         }
 
+
+       public DbSet<Client> Clients{ get; set; }
     }
 }
