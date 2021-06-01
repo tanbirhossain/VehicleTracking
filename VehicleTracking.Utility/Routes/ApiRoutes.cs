@@ -19,7 +19,14 @@ namespace VehicleTracking.Utils.Routes
         public static class Vehicle
         {
             public const string Add = "api/v1/Vehicle/Add";
-            public const string GetByClientId = "api/v1/Account/GetByClinetId/{clientId}";
+            public const string GetVehicles = "api/v1/Vehicle/GetVehicles";
+          
+        }
+        public static class Position
+        {
+            public const string Add = "api/v1/Position/Add";
+            public const string CurrentPosition = "api/v1/Position/Current/{vehicleId}";
+            public const string Journey = "api/v1/Position/Journey/{vehicleId}&{start}&{end}";
           
         }
     }

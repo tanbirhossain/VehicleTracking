@@ -15,6 +15,33 @@ namespace VehicleTracking.Infrastructure.Domain.Configuration
             builder.Property(p => p.FirstName)
                 .HasMaxLength(100);
               
+            
+        }
+    }
+    public class VehicleConfiguration : IEntityTypeConfiguration<Vehicle>
+    {
+        public void Configure(EntityTypeBuilder<Vehicle> builder)
+        {
+            builder.Property(p => p.Name)
+                .HasMaxLength(200);
+
+
+
+            builder.HasOne(d => d.Client)
+                    .WithMany(p => p.Vehicles)
+                    .HasForeignKey(d => d.ClientId)
+                    .HasConstraintName("FK_Vehicle_Client");
+        }
+    }
+    public class PositionConfiguration : IEntityTypeConfiguration<Position>
+    {
+        public void Configure(EntityTypeBuilder<Position> builder)
+        {
+
+            builder.HasOne(d => d.Vehicle)
+                 .WithMany(p => p.Positions)
+                 .HasForeignKey(d => d.VehicleId)
+                 .HasConstraintName("FK_Position_Vehicle");
         }
     }
 }

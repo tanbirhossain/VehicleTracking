@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VehicleTracking.Infrastructure.Domain;
 
 namespace VehicleTracking.Infrastructure.Migrations
 {
     [DbContext(typeof(VehicleTrackingDbContext))]
-    partial class VehicleTrackingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210601015626_updated relation")]
+    partial class updatedrelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -65,8 +67,6 @@ namespace VehicleTracking.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("VehicleId");
-
                     b.ToTable("Position");
                 });
 
@@ -94,24 +94,11 @@ namespace VehicleTracking.Infrastructure.Migrations
                     b.ToTable("Vehicle");
                 });
 
-            modelBuilder.Entity("VehicleTracking.Infrastructure.Domain.Entities.Position", b =>
-                {
-                    b.HasOne("VehicleTracking.Infrastructure.Domain.Entities.Vehicle", "Vehicle")
-                        .WithMany("Positions")
-                        .HasForeignKey("VehicleId")
-                        .HasConstraintName("FK_Position_Vehicle")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Vehicle");
-                });
-
             modelBuilder.Entity("VehicleTracking.Infrastructure.Domain.Entities.Vehicle", b =>
                 {
                     b.HasOne("VehicleTracking.Infrastructure.Domain.Entities.Client", "Client")
                         .WithMany("Vehicles")
                         .HasForeignKey("ClientId")
-                        .HasConstraintName("FK_Vehicle_Client")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -121,11 +108,6 @@ namespace VehicleTracking.Infrastructure.Migrations
             modelBuilder.Entity("VehicleTracking.Infrastructure.Domain.Entities.Client", b =>
                 {
                     b.Navigation("Vehicles");
-                });
-
-            modelBuilder.Entity("VehicleTracking.Infrastructure.Domain.Entities.Vehicle", b =>
-                {
-                    b.Navigation("Positions");
                 });
 #pragma warning restore 612, 618
         }

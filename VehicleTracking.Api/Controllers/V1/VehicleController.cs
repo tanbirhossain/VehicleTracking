@@ -30,10 +30,10 @@ namespace VehicleTracking.Api.Controllers.V1
         }
 
         [Authorize]
-        [HttpGet(ApiRoutes.Vehicle.GetByClientId)]
-        public async Task<IActionResult> GetByClientId(GetVehiclesByClientIdQuery query)
+        [HttpGet(ApiRoutes.Vehicle.GetVehicles)]
+        public async Task<IActionResult> GetVehicles()
         {
-            return Ok(await _mediator.Send(query));
+            return Ok(await _mediator.Send(new GetVehiclesByClientIdQuery()));
         }
     }
 }

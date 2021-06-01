@@ -21,6 +21,7 @@ namespace VehicleTracking.Application.Ioc
             ////// Repository
             services.AddTransient<IClientRepository, ClientRepository>();
             services.AddTransient<IVehicleRepository, VehicleRepository>();
+            services.AddTransient<IPositionRepository, PositionRepository>();
             services.AddTransient<IHttpContextRepository, HttpContextRepository>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

@@ -3,9 +3,10 @@ using VehicleTracking.Application.Core.Responses.Command;
 
 namespace VehicleTracking.Application.Core.Requests.Command
 {
-    public class AddVehicleCommand : IRequest<AddVehicleResponse>
+    public class AddPositionCommand : IRequest<AddPositionResponse>
     {
-        public string Name { get; set; }
         public string DeviceId { get; set; }
-    } 
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+    }
 }

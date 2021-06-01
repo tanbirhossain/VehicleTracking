@@ -2,7 +2,7 @@
 
 namespace VehicleTracking.Infrastructure.Migrations
 {
-    public partial class removerefreshtoken : Migration
+    public partial class updatedtablesssss : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

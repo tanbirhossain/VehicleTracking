@@ -6,5 +6,6 @@ namespace VehicleTracking.Application.Core.Requests.Query
 {
     public class GetVehiclesByClientIdQuery : IRequest<List<GetVehiclesByClientIdResponse>>
     {
+
     }
 }

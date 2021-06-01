@@ -6,7 +6,8 @@ namespace VehicleTracking.Infrastructure.Repositories.Interfaces
 {
     public interface IVehicleRepository
     {
+        Task<Vehicle> GetVehicleByDeviceId(string deviceId);
         Task<List<Vehicle>> GetVehiclesByClientId(long clientId);
         Task<Vehicle> InsertVehicle(Vehicle vehicle);
-    }
+    }  
 }
