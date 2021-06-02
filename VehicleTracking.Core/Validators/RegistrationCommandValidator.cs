@@ -32,19 +32,23 @@ namespace VehicleTracking.Application.Validators
                 .EmailAddress().WithMessage("A valid email is required")
                 .OnAnyFailure(x => { firstPhasePassed = false; });
 
+
             RuleFor(e => e.Password).NotEmpty()
              .OnAnyFailure(x => { firstPhasePassed = false; });
+
+            RuleFor(x => x.ConfirmPassword)
+                .NotEmpty()
+                .Equal(x => x.Password)
+                .WithMessage("Password and Confirm Password does not match")
+                .OnAnyFailure(x => { firstPhasePassed = false; });
 
 
             When(x => firstPhasePassed, () =>
             {
-
                 RuleFor(x => x)
                 .NotEmpty()
                .MustAsync((x, cancellation) => IsEmailExists(x)).WithMessage("Email Must be unique");
             });
-
-
         }
 
         protected async Task<bool> IsEmailExists(RegistrationCommand command)
