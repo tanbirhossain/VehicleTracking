@@ -4,7 +4,7 @@ using VehicleTracking.Application.Core.Responses.Query;
 
 namespace VehicleTracking.Application.Core.Requests.Query
 {
-    public class GetAllClientQuery : IRequest<List<GetAllClientResponse>>
+    public class GetUserInfoQuery : IRequest<GetUserInfoResponse>
     {
     } 
 }

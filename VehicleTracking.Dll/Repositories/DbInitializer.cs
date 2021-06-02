@@ -17,7 +17,7 @@ namespace VehicleTracking.Infrastructure.Repositories
             {
                 context.Database.EnsureCreated();
 
-                // Look for any students.
+                // Look for any Client.
                 if (context.Clients.Any())
                 {
                     return;   // DB has been seeded
@@ -32,7 +32,11 @@ namespace VehicleTracking.Infrastructure.Repositories
                     FirstName = "Mohammed",
                     LastName = "Tanbir",
                     Email = "ovibhuiyan43@gmail.com",
-                    Password = "57a0f401fbbe2df3bd258d89e5a73808fa51a10d6a8188f90aab1a988770e4b7ef533198adb539547df8887bc743d6bc76fb6ab5a8ee67929834b4066d70df8e"
+                    Password = "57a0f401fbbe2df3bd258d89e5a73808fa51a10d6a8188f90aab1a988770e4b7ef533198adb539547df8887bc743d6bc76fb6ab5a8ee67929834b4066d70df8e",
+                    IsActive = true,
+                    AddedBy = 0,
+                    AddedDate = DateTime.UtcNow
+                    
                 };
                 // vehicle
                 var vehicle = new Vehicle

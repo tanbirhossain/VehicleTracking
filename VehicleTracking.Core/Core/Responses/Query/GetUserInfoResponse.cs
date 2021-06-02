@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VehicleTracking.Application.Core.Responses.Query
 {
-    public class GetAllClientResponse
+    public class GetUserInfoResponse
     {
         public long Id { get; set; }
         public string FirstName { get; set; }

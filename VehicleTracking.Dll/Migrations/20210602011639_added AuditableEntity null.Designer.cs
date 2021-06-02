@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VehicleTracking.Infrastructure.Domain;
 
 namespace VehicleTracking.Infrastructure.Migrations
 {
     [DbContext(typeof(VehicleTrackingDbContext))]
-    partial class VehicleTrackingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210602011639_added AuditableEntity null")]
+    partial class addedAuditableEntitynull
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

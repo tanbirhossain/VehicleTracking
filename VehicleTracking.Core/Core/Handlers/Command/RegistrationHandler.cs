@@ -29,6 +29,6 @@ namespace VehicleTracking.Application.Core.Handlers.Command
             var result = await _clientRepository.InsertClient(client);
             return result.Adapt<RegistrationResponse>();
         }
-    }  
+    }
   
 }

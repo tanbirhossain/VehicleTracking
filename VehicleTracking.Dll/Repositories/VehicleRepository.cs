@@ -27,14 +27,21 @@ namespace VehicleTracking.Infrastructure.Repositories
         }
         public async Task<List<Vehicle>> GetVehiclesByClientId(long clientId)
         {
-            var result = await _db.Vehicles.Where(e=>e.ClientId == clientId).ToListAsync();
+            var result = await _db.Vehicles.Where(e => e.ClientId == clientId).ToListAsync();
             return result;
         }
 
         public async Task<Vehicle> GetVehicleByDeviceId(string deviceId)
         {
-            var result = await _db.Vehicles.Where(e=>e.DeviceId == deviceId).FirstOrDefaultAsync();
+            var result = await _db.Vehicles.Where(e => e.DeviceId == deviceId).FirstOrDefaultAsync();
             return result;
         }
+
+        public async Task<bool> IsCorrectDevice(long clientId, string deviceId)
+        {
+            var result = await _db.Vehicles.Where(e => e.ClientId == clientId && e.DeviceId == deviceId).AnyAsync();
+            return result;
+        }
+
     }
 }

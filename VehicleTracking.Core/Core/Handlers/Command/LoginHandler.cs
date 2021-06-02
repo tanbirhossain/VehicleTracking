@@ -50,12 +50,8 @@ namespace VehicleTracking.Application.Core.Handlers.Command
                 Subject = new ClaimsIdentity(new Claim[]
                 {
                     new Claim(ClaimTypes.Name, client.Id.ToString())
-
                 }),
                 IssuedAt = DateTime.UtcNow,
-
-                // we are using only access token 
-                // if you need refresh token, i will update in future
                 Expires = DateTime.UtcNow.AddYears(5),// Access token lifetime 
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256)
             };

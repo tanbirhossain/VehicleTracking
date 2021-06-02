@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Http;
 
 namespace VehicleTracking.Infrastructure.Repositories
 {
-    public class HttpContextRepository : IHttpContextRepository
+    public class ContextRepository : IContextRepository
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
-        public HttpContextRepository(IHttpContextAccessor httpContextAccessor)
+        public ContextRepository(IHttpContextAccessor httpContextAccessor)
         {
             _httpContextAccessor = httpContextAccessor;
         }

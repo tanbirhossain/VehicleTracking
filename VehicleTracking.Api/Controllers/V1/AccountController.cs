@@ -24,20 +24,12 @@ namespace VehicleTracking.Api.Controllers.V1
             return Ok(await _mediator.Send(command));
         }
 
-        //[Authorize]
-        //[HttpGet(ApiRoutes.Account.All)]
-        //public async Task<IActionResult> GetAllClient()
-        //{
-        //    return Ok(await _mediator.Send(new GetAllClientQuery()));
-        //}
-
         [AllowAnonymous]
         [HttpPost(ApiRoutes.Account.Login)]
         public async Task<IActionResult> Login(LoginCommand command)
         {
-            return Ok(await _mediator.Send(command));
+            return Ok(await _mediator.Send(command));   
         }
-      
 
     }
 }

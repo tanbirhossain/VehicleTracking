@@ -14,9 +14,9 @@ namespace VehicleTracking.Application.Core.Handlers.Query
     public class GetVehiclesByClientIdHandler : IRequestHandler<GetVehiclesByClientIdQuery, List<GetVehiclesByClientIdResponse>>
     {
         private readonly IVehicleRepository _vehicleRepository;
-        private readonly IHttpContextRepository _httpContextRepository;
+        private readonly IContextRepository _httpContextRepository;
 
-        public GetVehiclesByClientIdHandler(IVehicleRepository vehicleRepository, IHttpContextRepository httpContextRepository)
+        public GetVehiclesByClientIdHandler(IVehicleRepository vehicleRepository, IContextRepository httpContextRepository)
         {
             _vehicleRepository = vehicleRepository;
             _httpContextRepository = httpContextRepository;

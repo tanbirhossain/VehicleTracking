@@ -20,14 +20,28 @@ namespace VehicleTracking.Infrastructure.Repositories
 
         public async Task<Client> InsertClient(Client client)
         {
-            var result = await _db.AddAsync(client);
+            var result = await _db.Clients.AddAsync(client);
             await _db.SaveChangesAsync();
             return result.Entity;
+        }
+        public async Task<Client> UpdateClient(Client client)
+        {
+            var result = await _db.Clients.Where(e => e.Id == client.Id).FirstOrDefaultAsync();
+            result.FirstName = result.FirstName;
+            result.LastName = result.LastName;
+
+            await _db.SaveChangesAsync();
+            return result;
         }
 
         public async Task<Client> GetClientByEmail(string email)
         {
             var result = await _db.Clients.Where(e => e.Email == email).FirstOrDefaultAsync();
+            return result;
+        } 
+        public async Task<Client> GetClientById(long Id)
+        {
+            var result = await _db.Clients.Where(e => e.Id == Id).FirstOrDefaultAsync();
             return result;
         }
 

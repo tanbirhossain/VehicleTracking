@@ -16,6 +16,9 @@ namespace VehicleTracking.Application.Validators
             //validator
             services.AddTransient<IValidator<RegistrationCommand>, RegistrationCommandValidator>();
             services.AddTransient<IValidator<LoginCommand>, LoginCommandValidator>();
+            services.AddTransient<IValidator<AddVehicleCommand>, AddVehicleCommandValidator>();
+            services.AddTransient<IValidator<AddPositionCommand>, AddPositionCommandValidator>();
+            services.AddTransient<IValidator<UpdateClientCommand>, UpdateClientCommandValidator>();
         }
     }
 }

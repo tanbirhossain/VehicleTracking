@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VehicleTracking.Infrastructure.Domain;
 
 namespace VehicleTracking.Infrastructure.Migrations
 {
     [DbContext(typeof(VehicleTrackingDbContext))]
-    partial class VehicleTrackingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210602011402_added AuditableEntity")]
+    partial class addedAuditableEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,10 +28,10 @@ namespace VehicleTracking.Infrastructure.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<long?>("AddedBy")
+                    b.Property<long>("AddedBy")
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime?>("AddedDate")
+                    b.Property<DateTime>("AddedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
@@ -40,10 +42,10 @@ namespace VehicleTracking.Infrastructure.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<bool?>("IsActive")
+                    b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<long?>("LastModifiedBy")
+                    b.Property<long>("LastModifiedBy")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("LastModifiedDate")
@@ -68,16 +70,16 @@ namespace VehicleTracking.Infrastructure.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<long?>("AddedBy")
+                    b.Property<long>("AddedBy")
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime?>("AddedDate")
+                    b.Property<DateTime>("AddedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool?>("IsActive")
+                    b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<long?>("LastModifiedBy")
+                    b.Property<long>("LastModifiedBy")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("LastModifiedDate")
@@ -106,10 +108,10 @@ namespace VehicleTracking.Infrastructure.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<long?>("AddedBy")
+                    b.Property<long>("AddedBy")
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime?>("AddedDate")
+                    b.Property<DateTime>("AddedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<long>("ClientId")
@@ -118,10 +120,10 @@ namespace VehicleTracking.Infrastructure.Migrations
                     b.Property<string>("DeviceId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("IsActive")
+                    b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<long?>("LastModifiedBy")
+                    b.Property<long>("LastModifiedBy")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("LastModifiedDate")

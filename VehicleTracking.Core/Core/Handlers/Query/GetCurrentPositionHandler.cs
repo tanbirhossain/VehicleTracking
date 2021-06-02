@@ -22,5 +22,7 @@ namespace VehicleTracking.Application.Core.Handlers.Query
             var result = await _positionRepository.CurrentPositionByVehicleId(request.VehicleId);
             return result.Adapt<GetCurrentPositionResponse>();
         }
+
+        
     }
 }

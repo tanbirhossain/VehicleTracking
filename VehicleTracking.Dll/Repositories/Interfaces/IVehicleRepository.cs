@@ -9,5 +9,6 @@ namespace VehicleTracking.Infrastructure.Repositories.Interfaces
         Task<Vehicle> GetVehicleByDeviceId(string deviceId);
         Task<List<Vehicle>> GetVehiclesByClientId(long clientId);
         Task<Vehicle> InsertVehicle(Vehicle vehicle);
+        Task<bool> IsCorrectDevice(long clientId, string deviceId);
     }  
 }

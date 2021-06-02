@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleTracking.UnitTests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleTracking.IntegrationTests", "VehicleTracking.IntegrationTests\VehicleTracking.IntegrationTests.csproj", "{E2667BD2-068A-4788-9664-EFC281A9335F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kubernetes", "Kubernetes", "{68D0A195-F720-42D6-BC13-78CF9B065D78}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{70059330-57D9-41D5-AAAB-A41FAB6DD13A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,10 @@ Global
 		{E2667BD2-068A-4788-9664-EFC281A9335F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2667BD2-068A-4788-9664-EFC281A9335F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2667BD2-068A-4788-9664-EFC281A9335F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70059330-57D9-41D5-AAAB-A41FAB6DD13A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70059330-57D9-41D5-AAAB-A41FAB6DD13A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70059330-57D9-41D5-AAAB-A41FAB6DD13A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70059330-57D9-41D5-AAAB-A41FAB6DD13A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

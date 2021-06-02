@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using VehicleTracking.Infrastructure.Domain.Common;
 
 namespace VehicleTracking.Infrastructure.Domain.Entities
 {
-    public class Client
+    public class Client : AuditableEntity
     {
         public Client()
         {

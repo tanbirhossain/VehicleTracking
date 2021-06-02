@@ -1,6 +1,6 @@
 ﻿namespace VehicleTracking.Infrastructure.Repositories.Interfaces
 {
-    public interface IHttpContextRepository
+    public interface IContextRepository
     {
         long GetUserId();
     }

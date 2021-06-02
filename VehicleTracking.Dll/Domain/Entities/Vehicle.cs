@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using VehicleTracking.Infrastructure.Domain.Common;
 
 namespace VehicleTracking.Infrastructure.Domain.Entities
 {
-    public class Vehicle
+    public class Vehicle : AuditableEntity
     {
         public Vehicle()
         {

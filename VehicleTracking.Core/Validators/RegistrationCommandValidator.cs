@@ -19,10 +19,18 @@ namespace VehicleTracking.Application.Validators
             _clientRepository = clientRepository;
             bool firstPhasePassed = true;
 
-            RuleFor(e => e.FirstName).NotEmpty();
-            RuleFor(e => e.LastName).NotEmpty();
-            RuleFor(e => e.LastName).NotEmpty();
-            RuleFor(e => e.Email).NotEmpty();
+            RuleFor(e => e.FirstName)
+                .NotEmpty()
+                .Length(0, 100)
+                .OnAnyFailure(x => { firstPhasePassed = false; });
+            RuleFor(e => e.LastName)
+                .NotEmpty()
+                .Length(0, 100)
+                .OnAnyFailure(x => { firstPhasePassed = false; });
+            RuleFor(e => e.Email)
+                .NotEmpty()
+                .EmailAddress().WithMessage("A valid email is required")
+                .OnAnyFailure(x => { firstPhasePassed = false; });
 
             RuleFor(e => e.Password).NotEmpty()
              .OnAnyFailure(x => { firstPhasePassed = false; });
@@ -41,8 +49,8 @@ namespace VehicleTracking.Application.Validators
 
         protected async Task<bool> IsEmailExists(RegistrationCommand command)
         {
-            var exists = await _clientRepository.GetClientByEmail(command.Email);
-            if (exists != null)
+            var client = await _clientRepository.GetClientByEmail(command.Email);
+            if (client != null)
             {
                 return false;
 
@@ -50,4 +58,5 @@ namespace VehicleTracking.Application.Validators
             return true;
         }
     }
+
 }

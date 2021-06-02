@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  vehicletracking.api:
+    image: ${DOCKER_REGISTRY-}vehicletrackingapi
+    build:
+      context: .
+      dockerfile: VehicleTracking.Api/Dockerfile

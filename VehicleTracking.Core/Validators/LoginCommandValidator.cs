@@ -53,7 +53,7 @@ namespace VehicleTracking.Application.Validators
                 return false;
 
             }
-           
+
         }
     }
 }

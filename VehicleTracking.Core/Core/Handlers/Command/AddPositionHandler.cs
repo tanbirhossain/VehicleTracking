@@ -25,10 +25,7 @@ namespace VehicleTracking.Application.Core.Handlers.Command
             var vehicle = await _vehicleRepository.GetVehicleByDeviceId(command.DeviceId);
 
             var position = command.Adapt<Position>();
-            position.AddedDate = DateTime.UtcNow;
             position.VehicleId = vehicle.Id;
-
-
             var result = await _positionRepository.InsertPosition(position);
             return result.Adapt<AddPositionResponse>();
         }

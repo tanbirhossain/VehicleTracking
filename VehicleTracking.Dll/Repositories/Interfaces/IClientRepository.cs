@@ -10,6 +10,8 @@ namespace VehicleTracking.Infrastructure.Repositories.Interfaces
     {
         Task<List<Client>> GetAllClients();
         Task<Client> GetClientByEmail(string email);
+        Task<Client> GetClientById(long Id);
         Task<Client> InsertClient(Client client);
+        Task<Client> UpdateClient(Client client);
     }
 }

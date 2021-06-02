@@ -14,10 +14,10 @@ namespace VehicleTracking.Application.Core.Handlers.Command
     public class AddVehicleHandler : IRequestHandler<AddVehicleCommand, AddVehicleResponse>
     {
         private readonly IVehicleRepository _vehicleRepository;
-        private readonly IHttpContextRepository _httpContextRepository;
+        private readonly IContextRepository _httpContextRepository;
 
 
-        public AddVehicleHandler(IVehicleRepository vehicleRepository, IHttpContextRepository httpContextRepository)
+        public AddVehicleHandler(IVehicleRepository vehicleRepository, IContextRepository httpContextRepository)
         {
             _vehicleRepository = vehicleRepository;
             _httpContextRepository = httpContextRepository;
