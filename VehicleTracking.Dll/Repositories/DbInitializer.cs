@@ -45,15 +45,23 @@ namespace VehicleTracking.Infrastructure.Repositories
                     Name = "Car"
                 };
                 // position
-                var position = new Position
+                var position1 = new Position
                 {
-                    Longitude = 10,
-                    Latitude = 35.9,
+                    Latitude = 32.55549194555017,
+                    Longitude = 131.6753259818856,
+                    AddedDate = DateTime.UtcNow
+                };
+                var position2 = new Position
+                {
+                    Latitude = 35.681610805430566,
+                    Longitude = 139.76923880376333,
                     AddedDate = DateTime.UtcNow
                 };
 
-                vehicle.Positions.Add(position);
+                vehicle.Positions.Add(position1);
+                vehicle.Positions.Add(position2);
                 client.Vehicles.Add(vehicle);
+
                 var result_client = context.Clients.Add(client);
                 context.SaveChanges();
             }

@@ -65,13 +65,13 @@ namespace VehicleTracking.UnitTests.v1
             {
                 new GetVehiclesByClientIdResponse
                 {
-                    Id = 0,
+                    VehicleId = 1,
                     Name = "BMW car",
                     DeviceId = "d12345"
                 },
                 new GetVehiclesByClientIdResponse
                 {
-                    Id = 1,
+                    VehicleId = 2,
                     Name = "Toyota Premio",
                     DeviceId = "d123rtr5"
                 }

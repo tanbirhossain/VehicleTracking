@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>70059330-57d9-41d5-aaab-a41fab6dd13a</ProjectGuid>
+    <ProjectGuid>3b2f8ad2-5422-428d-99e5-b0b59e1ebd54</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
     <DockerServiceName>vehicletracking.api</DockerServiceName>

@@ -35,8 +35,8 @@ namespace VehicleTracking.Api
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers().AddFluentValidation(); 
-            services.AddDbContext<VehicleTrackingDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("myconn")));
+            services.AddControllers().AddFluentValidation();
+            services.AddDbContext<VehicleTrackingDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("VehicleTrackingConn")));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "VehicleTracking.Api", Version = "v1" });
@@ -71,7 +71,7 @@ namespace VehicleTracking.Api
             #region Register IOC container
             services.BuildServices(); //Ioc Container
             #endregion
-          
+
 
             #region Global Cors Policy
             services.AddCors(options => options.AddPolicy("CorsPolicy",
@@ -98,7 +98,7 @@ namespace VehicleTracking.Api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env , VehicleTrackingDbContext context)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, VehicleTrackingDbContext context)
         {
             if (env.IsDevelopment())
             {

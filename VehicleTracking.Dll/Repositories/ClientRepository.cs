@@ -27,8 +27,8 @@ namespace VehicleTracking.Infrastructure.Repositories
         public async Task<Client> UpdateClient(Client client)
         {
             var result = await _db.Clients.Where(e => e.Id == client.Id).FirstOrDefaultAsync();
-            result.FirstName = result.FirstName;
-            result.LastName = result.LastName;
+            result.FirstName = client.FirstName;
+            result.LastName = client.LastName;
 
             await _db.SaveChangesAsync();
             return result;

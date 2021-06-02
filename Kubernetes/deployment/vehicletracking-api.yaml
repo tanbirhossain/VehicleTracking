@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vehicletracking-api-deployment
+  namespace: vehicletracking
+spec:
+  selector:
+    matchLabels:
+      app: vehicletracking-api
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: vehicletracking-api
+    spec:
+      containers:
+      - name: vehicletracking-api
+        image: tanbir/vehicletracking-api:v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+        env:
+          - name: ConnectionStrings__VehicleTrackingConn
+            value: Server=sqlserver-service,1435;Database=VehicleTrackingDb;user id=sa;password=Pass@word;
+      restartPolicy: Always   
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vehicletracking-api-service
+  namespace: vehicletracking
+spec:
+  type: LoadBalancer
+  selector:
+    app: vehicletracking-api
+  ports:
+  - name: http-5100
+    port: 5100 # extarnal port
+    targetPort: 80 #internal port
+

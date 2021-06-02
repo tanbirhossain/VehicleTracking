@@ -11,13 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleTracking.Application
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleTracking.Utils", "VehicleTracking.Utility\VehicleTracking.Utils.csproj", "{79531646-A4D2-4C8D-81CA-D1C2E9F9B0E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleTracking.UnitTests", "VehicleTracking.UnitTests\VehicleTracking.UnitTests.csproj", "{C7183511-7983-475A-B661-A14F1191FABF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleTracking.UnitTests", "VehicleTracking.UnitTests\VehicleTracking.UnitTests.csproj", "{C7183511-7983-475A-B661-A14F1191FABF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleTracking.IntegrationTests", "VehicleTracking.IntegrationTests\VehicleTracking.IntegrationTests.csproj", "{E2667BD2-068A-4788-9664-EFC281A9335F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleTracking.IntegrationTests", "VehicleTracking.IntegrationTests\VehicleTracking.IntegrationTests.csproj", "{E2667BD2-068A-4788-9664-EFC281A9335F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kubernetes", "Kubernetes", "{68D0A195-F720-42D6-BC13-78CF9B065D78}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{70059330-57D9-41D5-AAAB-A41FAB6DD13A}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{3B2F8AD2-5422-428D-99E5-B0B59E1EBD54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,10 +49,10 @@ Global
 		{E2667BD2-068A-4788-9664-EFC281A9335F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2667BD2-068A-4788-9664-EFC281A9335F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2667BD2-068A-4788-9664-EFC281A9335F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{70059330-57D9-41D5-AAAB-A41FAB6DD13A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70059330-57D9-41D5-AAAB-A41FAB6DD13A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70059330-57D9-41D5-AAAB-A41FAB6DD13A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70059330-57D9-41D5-AAAB-A41FAB6DD13A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B2F8AD2-5422-428D-99E5-B0B59E1EBD54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B2F8AD2-5422-428D-99E5-B0B59E1EBD54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B2F8AD2-5422-428D-99E5-B0B59E1EBD54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B2F8AD2-5422-428D-99E5-B0B59E1EBD54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

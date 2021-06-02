@@ -1,8 +1,31 @@
-version: '3.4'
+version: "3.4"
 
 services:
+  sqlserver:
+    image: "mcr.microsoft.com/mssql/server:2019-latest"
+    container_name: sqlserver
+    volumes:
+      - sqlserverdata:/var/opt/mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_PID=Developer
+      - SA_PASSWORD=Pass@word
+    ports:
+      - "1435:1433"
+
   vehicletracking.api:
-    image: ${DOCKER_REGISTRY-}vehicletrackingapi
+    image: tanbir/vehicletracking-api:v1
     build:
       context: .
       dockerfile: VehicleTracking.Api/Dockerfile
+    depends_on:
+        - sqlserver
+    restart: on-failure
+    ports:
+        - "5100:80"
+      environment:
+        - ASPNETCORE_ENVIRONMENT=Production
+        - ConnectionStrings__VehicleTrackingConn=Server=sqlserver;Database=VehicleTrackingDb;user id=sa;password=Pass@word;
+
+volumes:
+  sqlserverdata:

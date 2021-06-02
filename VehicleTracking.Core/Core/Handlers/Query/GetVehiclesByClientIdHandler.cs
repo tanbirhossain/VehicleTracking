@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using VehicleTracking.Application.Core.Requests.Query;
@@ -24,7 +25,14 @@ namespace VehicleTracking.Application.Core.Handlers.Query
         public async Task<List<GetVehiclesByClientIdResponse>> Handle(GetVehiclesByClientIdQuery query, CancellationToken cancellationToken)
         {
             var result = await _vehicleRepository.GetVehiclesByClientId(_httpContextRepository.GetUserId());
-            return result.Adapt<List<GetVehiclesByClientIdResponse>>();
+            var response = result.Select(e => new GetVehiclesByClientIdResponse
+            {
+                VehicleId = e.Id,
+                Name = e.Name,
+                DeviceId = e.DeviceId
+            }).ToList();
+            
+            return response;
         }
     }
 }
