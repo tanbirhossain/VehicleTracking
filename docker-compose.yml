@@ -14,7 +14,7 @@ services:
       - "1435:1433"
 
   vehicletracking.api:
-    image: tanbir/vehicletracking-api:v1
+    image: ovibhuiyan43/vehicletracking-api:v1
     build:
       context: .
       dockerfile: VehicleTracking.Api/Dockerfile
@@ -23,7 +23,7 @@ services:
     restart: on-failure
     ports:
         - "5100:80"
-      environment:
+    environment:
         - ASPNETCORE_ENVIRONMENT=Production
         - ConnectionStrings__VehicleTrackingConn=Server=sqlserver;Database=VehicleTrackingDb;user id=sa;password=Pass@word;
 

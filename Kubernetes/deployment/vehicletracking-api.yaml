@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: vehicletracking-api
-        image: tanbir/vehicletracking-api:v1
+        image: ovibhuiyan43/vehicletracking-api:v1
         resources:
           limits:
             memory: "128Mi"
