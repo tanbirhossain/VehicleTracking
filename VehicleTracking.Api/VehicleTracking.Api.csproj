@@ -25,8 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\VehicleTracking.Core\VehicleTracking.Application.csproj" />
-    <ProjectReference Include="..\VehicleTracking.Dll\VehicleTracking.Infrastructure.csproj" />
+    <ProjectReference Include="..\VehicleTracking.Application\VehicleTracking.Application.csproj" />
+    <ProjectReference Include="..\VehicleTracking.Infrastructure\VehicleTracking.Infrastructure.csproj" />
     <ProjectReference Include="..\VehicleTracking.Utility\VehicleTracking.Utils.csproj" />
   </ItemGroup>
 

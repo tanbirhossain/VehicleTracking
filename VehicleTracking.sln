@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleTracking.Api", "VehicleTracking.Api\VehicleTracking.Api.csproj", "{29BD708C-A1AC-4DE7-BB29-3CFFF12DF79A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleTracking.Infrastructure", "VehicleTracking.Dll\VehicleTracking.Infrastructure.csproj", "{DAB7B012-0A84-4E65-8CF2-6ABF5DE98846}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleTracking.Infrastructure", "VehicleTracking.Infrastructure\VehicleTracking.Infrastructure.csproj", "{DAB7B012-0A84-4E65-8CF2-6ABF5DE98846}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleTracking.Application", "VehicleTracking.Core\VehicleTracking.Application.csproj", "{9A294D73-DFBC-4FA1-ADC5-2B874C8D6015}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleTracking.Application", "VehicleTracking.Application\VehicleTracking.Application.csproj", "{9A294D73-DFBC-4FA1-ADC5-2B874C8D6015}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleTracking.Utils", "VehicleTracking.Utility\VehicleTracking.Utils.csproj", "{79531646-A4D2-4C8D-81CA-D1C2E9F9B0E0}"
 EndProject

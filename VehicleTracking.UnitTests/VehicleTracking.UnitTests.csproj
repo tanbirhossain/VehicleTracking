@@ -22,7 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VehicleTracking.Api\VehicleTracking.Api.csproj" />
-    <ProjectReference Include="..\VehicleTracking.Core\VehicleTracking.Application.csproj" />
+    <ProjectReference Include="..\VehicleTracking.Application\VehicleTracking.Application.csproj" />
   </ItemGroup>
 
 </Project>

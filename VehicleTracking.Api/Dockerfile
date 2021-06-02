@@ -8,9 +8,9 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
 COPY ["VehicleTracking.Api/VehicleTracking.Api.csproj", "VehicleTracking.Api/"]
-COPY ["VehicleTracking.Dll/VehicleTracking.Infrastructure.csproj", "VehicleTracking.Dll/"]
+COPY ["VehicleTracking.Infrastructure/VehicleTracking.Infrastructure.csproj", "VehicleTracking.Infrastructure/"]
 COPY ["VehicleTracking.Utility/VehicleTracking.Utils.csproj", "VehicleTracking.Utility/"]
-COPY ["VehicleTracking.Core/VehicleTracking.Application.csproj", "VehicleTracking.Core/"]
+COPY ["VehicleTracking.Application/VehicleTracking.Application.csproj", "VehicleTracking.Application/"]
 RUN dotnet restore "VehicleTracking.Api/VehicleTracking.Api.csproj"
 COPY . .
 WORKDIR "/src/VehicleTracking.Api"

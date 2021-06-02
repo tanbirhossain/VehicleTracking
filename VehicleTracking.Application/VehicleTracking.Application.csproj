@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\VehicleTracking.Dll\VehicleTracking.Infrastructure.csproj" />
+    <ProjectReference Include="..\VehicleTracking.Infrastructure\VehicleTracking.Infrastructure.csproj" />
     <ProjectReference Include="..\VehicleTracking.Utility\VehicleTracking.Utils.csproj" />
   </ItemGroup>
 
