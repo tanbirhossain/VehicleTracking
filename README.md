@@ -78,8 +78,10 @@ Api: http://localhost:5100/
 URL: `https://localhost:5001/api/v1/Account/Login`
 
 ```
-email : ovibhuiyan43@gmail.com
-password : 1234
+{
+  "email": "ovibhuiyan43@gmail.com",
+  "password": "1234"
+}
 ```
 
 ## Extensibility
