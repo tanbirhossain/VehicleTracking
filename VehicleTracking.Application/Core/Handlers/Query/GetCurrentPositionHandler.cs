@@ -24,8 +24,9 @@ namespace VehicleTracking.Application.Core.Handlers.Query
         {
             var result = await _positionRepository.CurrentPositionByVehicleId(request.VehicleId);
             var response = result.Adapt<GetCurrentPositionResponse>();
+
+            // google api provide the address based on position
             response.Address = await _googleApiService.GetGeoAddress(response.Latitude, response.Longitude);
-            
             return response;
         }
 

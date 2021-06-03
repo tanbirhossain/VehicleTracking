@@ -10,8 +10,8 @@ using VehicleTracking.Infrastructure.Domain;
 namespace VehicleTracking.Infrastructure.Migrations
 {
     [DbContext(typeof(VehicleTrackingDbContext))]
-    [Migration("20210601015626_updated relation")]
-    partial class updatedrelation
+    [Migration("20210603013637_Added table")]
+    partial class Addedtable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,15 +28,32 @@ namespace VehicleTracking.Infrastructure.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<long?>("AddedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("AddedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("FirstName")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<bool?>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<long?>("LastModifiedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("LastModifiedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
@@ -53,7 +70,19 @@ namespace VehicleTracking.Infrastructure.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("AddedDate")
+                    b.Property<long?>("AddedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("AddedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool?>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<long?>("LastModifiedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("LastModifiedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<double>("Latitude")
@@ -67,6 +96,8 @@ namespace VehicleTracking.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("VehicleId");
+
                     b.ToTable("Position");
                 });
 
@@ -77,11 +108,26 @@ namespace VehicleTracking.Infrastructure.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<long?>("AddedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("AddedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<long>("ClientId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("DeviceId")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<long?>("LastModifiedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("LastModifiedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .HasMaxLength(200)
@@ -94,11 +140,24 @@ namespace VehicleTracking.Infrastructure.Migrations
                     b.ToTable("Vehicle");
                 });
 
+            modelBuilder.Entity("VehicleTracking.Infrastructure.Domain.Entities.Position", b =>
+                {
+                    b.HasOne("VehicleTracking.Infrastructure.Domain.Entities.Vehicle", "Vehicle")
+                        .WithMany("Positions")
+                        .HasForeignKey("VehicleId")
+                        .HasConstraintName("FK_Position_Vehicle")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Vehicle");
+                });
+
             modelBuilder.Entity("VehicleTracking.Infrastructure.Domain.Entities.Vehicle", b =>
                 {
                     b.HasOne("VehicleTracking.Infrastructure.Domain.Entities.Client", "Client")
                         .WithMany("Vehicles")
                         .HasForeignKey("ClientId")
+                        .HasConstraintName("FK_Vehicle_Client")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -108,6 +167,11 @@ namespace VehicleTracking.Infrastructure.Migrations
             modelBuilder.Entity("VehicleTracking.Infrastructure.Domain.Entities.Client", b =>
                 {
                     b.Navigation("Vehicles");
+                });
+
+            modelBuilder.Entity("VehicleTracking.Infrastructure.Domain.Entities.Vehicle", b =>
+                {
+                    b.Navigation("Positions");
                 });
 #pragma warning restore 612, 618
         }

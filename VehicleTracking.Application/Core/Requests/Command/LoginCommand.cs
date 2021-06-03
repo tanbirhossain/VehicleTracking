@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using VehicleTracking.Application.Core.Responses.Command;
-using VehicleTracking.Utils.Infrastructure;
+
 
 namespace VehicleTracking.Application.Core.Requests.Command
 {
