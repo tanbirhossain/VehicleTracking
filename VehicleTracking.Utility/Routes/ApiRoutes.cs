@@ -33,8 +33,7 @@ namespace VehicleTracking.Utils.Routes
             public const string Add = "api/v1/Position/Add";
             public const string CurrentPosition = "api/v1/Position/Current/{vehicleId}";
             public const string Journey = "api/v1/Position/Journey/{vehicleId}&{start}&{end}";
-            public const string map = "api/v1/Position/google/{latitude}&{longitude}";
-          
+
         }
     }
 }

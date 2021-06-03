@@ -24,9 +24,9 @@ namespace VehicleTracking.IntegrationTests
 
             var addPositionReq = new AddPositionCommand
             {
-                DeviceId = "d1234",
-                Latitude = 7.575904,
-                Longitude = 6.440582
+                DeviceId = "demodeviceId1",
+                Latitude = 35.681610805430566,
+                Longitude = 139.76923880376333,
             };
 
             // Act
@@ -64,18 +64,15 @@ namespace VehicleTracking.IntegrationTests
             // Arrange
             await AuthenticateAsync();
 
-            var req = new GetJourneyQuery
-            {
-                VehicleId = 1,
-                Start = DateTime.Parse("01/06/2021 2:02"),
-                End = DateTime.Parse("02/06/2021 2:03"),
-            };
-
+        
             // Act
-            var response = await _testClient.GetAsync(ApiRoutes.Position.Journey
-                .Replace("{vehicleId}", req.VehicleId.ToString())
-                .Replace("{start}", req.Start.ToString())
-                .Replace("{end}", req.End.ToString()));
+            var url = ApiRoutes.Position.Journey
+                .Replace("{vehicleId}", "1")
+                .Replace("{start}", "2021-6-1")
+                .Replace("{end}", "2021-6-13");
+
+
+            var response = await _testClient.GetAsync(url);
 
             var position_response = await response.Content.ReadAsAsync<List<GetJourneyResponse>>();
 

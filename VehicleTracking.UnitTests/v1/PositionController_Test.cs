@@ -99,8 +99,8 @@ namespace VehicleTracking.UnitTests.v1
             var command = new GetJourneyQuery
             {
                 VehicleId = 1,
-                Start = DateTime.Parse("01/06/2021 2:02"),
-                End = DateTime.Parse("02/06/2021 2:03"),
+                Start = DateTime.Parse("01/06/2021"),
+                End = DateTime.Parse("03/06/2021"),
 
             };
 
@@ -108,15 +108,15 @@ namespace VehicleTracking.UnitTests.v1
             {
                 new GetJourneyResponse
                 {
-                    Latitude = 7.575904,
-                    Longitude = 6.440582,
-                    AddedDate = Convert.ToDateTime("01/06/2021 2:02"),
+                    Latitude = 32.55549194555017,
+                    Longitude = 131.6753259818856,
+                    AddedDate = DateTime.Parse("01/06/2021 2:02")
                 },
                 new GetJourneyResponse
                 {
-                    Latitude = 7.575914,
-                    Longitude = 6.440592,
-                    AddedDate = Convert.ToDateTime("01/06/2021 2:05"),
+                    Latitude = 35.681610805430566,
+                    Longitude = 139.76923880376333,
+                    AddedDate = DateTime.Parse("02/06/2021 2:02")
                 },
 
             };

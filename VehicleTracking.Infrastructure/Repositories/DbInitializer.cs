@@ -49,17 +49,23 @@ namespace VehicleTracking.Infrastructure.Repositories
                 {
                     Latitude = 32.55549194555017,
                     Longitude = 131.6753259818856,
-                    AddedDate = DateTime.UtcNow
+                    AddedDate = DateTime.Parse("01/06/2021 2:02")
                 };
                 var position2 = new Position
                 {
                     Latitude = 35.681610805430566,
                     Longitude = 139.76923880376333,
-                    AddedDate = DateTime.UtcNow
+                    AddedDate = DateTime.Parse("02/06/2021 2:02")
                 };
-
+                var position3 = new Position
+                {
+                    Latitude = 35.681610805430566,
+                    Longitude = 139.76923880376333,
+                    AddedDate = DateTime.Parse("03/06/2021 2:02")
+                };
                 vehicle.Positions.Add(position1);
                 vehicle.Positions.Add(position2);
+                vehicle.Positions.Add(position3);
                 client.Vehicles.Add(vehicle);
 
                 var result_client = context.Clients.Add(client);

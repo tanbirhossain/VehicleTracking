@@ -17,7 +17,7 @@ namespace VehicleTracking.IntegrationTests
     public class VehicleControllerTests : BaseIntegrationTest
     {
         [Fact]
-        public async Task Get_Vehicle_PostVehicle_ForAuthUser()
+        public async Task Post_Vehicle_PostVehicle_ForAuthUser()
         {
             // Arrange
             await AuthenticateAsync();

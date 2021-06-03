@@ -47,7 +47,7 @@ Api: http://localhost:5100/
 #### Local Kubernetes
 
 Make sure you have installed and configured Kubernetes in your environment.
-After that, you can run the below commands from the `/VehicleTracking/Kubernetes/` directory and get started with the VehicleTracking immediately.
+After that, you can run the below commands from the `/VehicleTracking/Kubernetes/` directory.
 
 ```powershell
  ./build-images.ps1
@@ -63,7 +63,7 @@ Api: http://localhost:5100/
 ## How it works
 
 1. Register a client with first name , last name, email, password .
-2. Client can login with email, password.
+2. Client can login with email, password. 
 
 3. A registered client can add multiple vehicle with Name, DeviceId. DeviceId is unique id which you get from the GPS device.
 
