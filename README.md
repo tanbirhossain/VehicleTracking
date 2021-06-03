@@ -14,7 +14,7 @@ Please make sure you've already installed Visual Studio 2019, .Net 5 sdk and Sql
 [.Net 5](https://dotnet.microsoft.com/download/dotnet/5.0)  
 [Sql Server 2019](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 
-**VehicleTracking.sln** from `/VehicleTracking/` directory.
+Select **VehicleTracking.sln** from `/VehicleTracking/` directory.
 Change database connection in `appsettings.json` from `VehicleTracking.Api` project from visual studio
 `ConnectionStrings` section in `appsettings.json`:
 
@@ -31,7 +31,6 @@ I have implemented swagger documentation . You can see api documentation below u
 ```
 Api documentation: https://localhost:5001/swagger/index.html
 ```
-
 
 #### Docker
 
@@ -63,7 +62,6 @@ You should be able to access api components of the application by using the belo
 ```
 Api: http://localhost:5100/
 ```
-
 
 ## How it works
 
