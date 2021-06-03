@@ -1,9 +1,5 @@
 # Vehicle Tracking Api
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 ## Installing
 
 #### Visual studio
@@ -66,7 +62,7 @@ Api: http://localhost:5100/
 
 ## How it works
 
-1. **Register** a client with first name , last name, email, password .
+1. Register a client with first name , last name, email, password .
 2. Client can login with email, password.
 
 3. A registered client can add multiple vehicle with Name, DeviceId. DeviceId is unique id which you get from the GPS device.
@@ -95,3 +91,7 @@ After that have to do migration below commands.
  add-migration "Added properties"
  update-database
 ```
+
+## Bonus
+
+I have implemented google map geocode which will send address based on latitude and longitude. You can find `GoogleApiService` .
