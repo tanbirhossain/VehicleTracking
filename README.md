@@ -6,6 +6,33 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Installing
 
+#### Visual studio
+
+Please make sure you've already installed Visual Studio 2019, .Net 5 sdk and Sql Server 2019 in your windows 10 platform .
+
+[Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)  
+[.Net 5](https://dotnet.microsoft.com/download/dotnet/5.0)  
+[Sql Server 2019](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+
+**VehicleTracking.sln** from `/VehicleTracking/` directory.
+Change database connection in `appsettings.json` from `VehicleTracking.Api` project from visual studio
+`ConnectionStrings` section in `appsettings.json`:
+
+```
+  "ConnectionStrings": {
+    "VehicleTrackingConn": "Server=localhost;Database=VehicleTrackingDb;user id=sa;password=123456789;"
+  },
+
+```
+
+Select and Run `VehicleTracking.Api` application.
+I have implemented swagger documentation . You can see api documentation below url
+
+```
+Api documentation: https://localhost:5001/swagger/index.html
+```
+
+
 #### Docker
 
 Make sure you have installed and configured docker in your environment. After that, you can run the below commands from the **/VehicleTracking/** directory and get started with the VehicleTracking immediately.
@@ -37,31 +64,6 @@ You should be able to access api components of the application by using the belo
 Api: http://localhost:5100/
 ```
 
-#### Visual studio
-
-Please make sure you've already installed Visual Studio 2019, .Net 5 sdk and Sql Server 2019 in your windows 10 platform .
-
-[Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)  
-[.Net 5](https://dotnet.microsoft.com/download/dotnet/5.0)  
-[Sql Server 2019](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
-
-**VehicleTracking.sln** from `/VehicleTracking/` directory.
-Change database connection in `appsettings.json` from `VehicleTracking.Api` project from visual studio
-`ConnectionStrings` section in `appsettings.json`:
-
-```
-  "ConnectionStrings": {
-    "VehicleTrackingConn": "Server=localhost;Database=VehicleTrackingDb;user id=sa;password=123456789;"
-  },
-
-```
-
-Select and Run `VehicleTracking.Api` application.
-I have implemented swagger documentation . You can see api documentation below url
-
-```
-Api documentation: https://localhost:5001/swagger/index.html
-```
 
 ## How it works
 
