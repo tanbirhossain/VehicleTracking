@@ -88,7 +88,7 @@ password : 1234
 
 ## Extensibility
 
-If customer wants add more properties than have to update Data Model.
+If customer wants add more properties than you should update Data Model.
 After that have to do migration below commands.
 
 ```package manager
